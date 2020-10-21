@@ -49,4 +49,18 @@ class PdfGenerateController extends Controller
             //->setOption('footer-html', $footerHtml);
         return $pdf->inline('test.pdf');
     }
+
+    public function generatePDF (Request $request) {
+        //$start = date_format(strtotime(str_replace('-', '/', $request->start)) ,"m-d-Y");
+       // $end = date_format(strtotime(str_replace('-', '/', $request->end)) ,"m-d-Y");
+       $list = DB::select("exec hospital.jjm.admit_report ?,?",[$request->start, $request->end]);
+
+       $headerHtml = view()->make('pdf.header', $request)->render();
+       //$footerHtml = view()->make('pdf.footer')->render();
+
+       $pdf = PDF::loadView('pdf.table', ['list'=>$list])
+           ->setOption('header-html', $headerHtml);
+           //->setOption('footer-html', $footerHtml);
+       return $pdf->inline('test.pdf');
+    }
 }
