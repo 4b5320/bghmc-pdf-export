@@ -18,7 +18,7 @@
             body {
                 font-family: 'Nunito';
             }
-            .tg  {border-collapse:collapse;border-spacing:0; width:100%}
+            /* .tg  {border-collapse:collapse;border-spacing:0; width:100%}
             .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
               overflow:hidden;padding:0px 10px;word-break:normal;}
             .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -26,7 +26,16 @@
             .tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
             .tg .tg-5hme{border-color:inherit;font-size:36px;text-align:center;vertical-align:middle}
             .tg .tg-0pky{border-color:inherit;text-align:center;vertical-align:middle}
-            .tg .tg-q3p3{border-color:inherit;font-size:x-small;text-align:left;vertical-align:bottom}
+            .tg .tg-q3p3{border-color:inherit;font-size:x-small;text-align:left;vertical-align:bottom} */
+
+            .tg  {margin:0px auto;}
+            .tg td{font-family:Arial, sans-serif;font-size:14px;
+              overflow:hidden;padding:0px 10px;word-break:normal;}
+            .tg th{font-family:Arial, sans-serif;font-size:14px;
+              font-weight:normal;overflow:hidden;padding:0px 10px;word-break:normal;}
+            .tg .tg-zv4m{text-align:left;vertical-align:top}
+            .tg .tg-pgku{font-size:12px;text-align:center;vertical-align:middle;width:500px}
+            .tg .tg-vs63{font-size:x-small;text-align:left;vertical-align:top}
         </style>
         <script>
             function substitutePdfVariables() {
@@ -55,7 +64,7 @@
     <body  onload="substitutePdfVariables()">
         {{-- <span style="display:inline; float:right">Page <span class="page"></span> of <span class="topage"></span></span> --}}
 
-        <table class="tg">
+        {{-- <table class="tg">
             <thead>
               <tr>
                 <th class="tg-0pky" rowspan="6"><img src="https://bghmc.doh.gov.ph/wp-content/uploads/2017/08/cropped-bghmc-logo-1.png" width="125" height="125"></th>
@@ -76,6 +85,23 @@
                 <td class="tg-q3p3">Effectivity Date: July 6, 2020</td>
               </tr>
             </thead>
-        </table>
+        </table> --}}
+
+        <style type="text/css">
+            
+            </style>
+            <table class="tg">
+            <tbody>
+              <tr>
+                <td class="tg-zv4m"><img src="https://bghmc.doh.gov.ph/wp-content/uploads/2017/08/cropped-bghmc-logo-1.png" alt="Image" width="80" height="80"></td>
+                <td class="tg-pgku"><span style="font-weight:bold">BAGUIO GENERAL HOSPITAL AND MEDICAL CENTER</span><br>Governor Pack Road, Baguio City, Benguet<br><span style="font-weight:bold">ADMISSION AND DISCHARGE REGISTER</span><br>From: xxxxxxxxxx - To: xx/xxx/xxxx</td>
+                <td class="tg-vs63">
+                    <br>Run Date: {{ Carbon\Carbon::now()->format("m/d/Y") }}
+                    <br>Run Time: {{ Carbon\Carbon::now()->format("H:i:s") }}
+                    <br>Page No. : <span class="page"></span>
+                </td>
+              </tr>
+            </tbody>
+            </table>
     </body>
 </html>
