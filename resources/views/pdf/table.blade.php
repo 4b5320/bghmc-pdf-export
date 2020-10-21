@@ -23,30 +23,86 @@
             tr {
                 page-break-inside: avoid;
             }
+            table, th, td {
+                border: 1px solid black;
+                vertical-align: top;
+            }
+            table {
+                border-collapse: collapse;
+            }
         </style>
     </head>
     <body>
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Hospital Number</th>
+                    <th>Date and Time</th>
+                    <th>Name of Patient</th>
+                    <th>Date of Birth</th>
+                    <th>Age</th>
+                    <th>Sex</th>
                     <th>Address</th>
-                    <th>Contact</th>
-                    <th>Country</th>
+                    <th>Ward</th>
+                    <th>Membership</th>
+                    <th>Admitting Diagnosis</th>
+                    <th>Admitting Physician</th>
+                    <th>Date and Time of Discharge</th>
+                    <th>Disposition</th>
+                    <th>Condition Upon Discharge</th>
+                    <th>Final Diagnosis</th>
                 </tr>
             </thead>
             <tbody>
-            <?php
-                $faker = Faker\Factory::create();
-                for($i=0; $i<100; $i++) {
-                    echo '<tr>';
-                        echo '<td>' . $faker->name . '</td>';
-                        echo '<td>' . $faker->address . '</td>';
-                        echo '<td>' . $faker->phoneNumber . '</td>';
-                        echo '<td>' . $faker->country . '</td>';
-                    echo '</tr>';
-                }
-            ?>
+                @foreach($list as $item)
+                    <tr>
+                        <td>
+                            {{$item->hpercode}}
+                        </td>
+                        <td>
+                            {{$item->admdate}}
+                        </td>
+                        <td>
+                            {{$item->patlast . ", " . $item->patfirst . " " . $item->patmiddle}}
+                        </td>
+                        <td>
+                            {{$item->patbdate}}
+                        </td>
+                        <td>
+                            {{$item->patage + 0}}
+                        </td>
+                        <td>
+                            {{$item->patsex}}
+                        </td>
+                        <td>
+                            {{$item->patstr . " " . $item->cc_brgy . " " . $item->cc_city . " " . $item->cc_prov}}
+                        </td>
+                        <td>
+                            {{$item->cc_wardname}}
+                        </td>
+                        <td>
+                            {{$item->cc_phmem}}
+                        </td>
+                        <td>
+                            {{$item->cc_admitdiag}}
+                        </td>
+                        <td>
+                            UNKNOWN
+                        </td>
+                        <td>
+                            {{$item->disdate}}
+                        </td>
+                        <td>
+                            {{$item->dispcode}}
+                        </td>
+                        <td>
+                            {{$item->condcode}}
+                        </td>
+                        <td>
+                            {{$item->cc_finaldiag}}
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </body>

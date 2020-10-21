@@ -39,17 +39,14 @@ class PdfGenerateController extends Controller
     }
 
     public function generateFakeTable () {
-        $headerHtml = view()->make('pdf.header')->render();
-        $footerHtml = view()->make('pdf.footer')->render();
-
-        $pdf = PDF::loadView('pdf.table')
-            ->setOption('header-html', $headerHtml)
-            ->setOption('footer-html', $footerHtml);
-        return $pdf->inline('test.pdf');
-    }
-
-    public function loadData () {
         $list = DB::select("exec hospital.jjm.admit_report ?,?",['01-01-2020','01-21-2020']);
-        dd($list);
+
+        $headerHtml = view()->make('pdf.header')->render();
+        //$footerHtml = view()->make('pdf.footer')->render();
+
+        $pdf = PDF::loadView('pdf.table', ['list'=>$list])
+            ->setOption('header-html', $headerHtml);
+            //->setOption('footer-html', $footerHtml);
+        return $pdf->inline('test.pdf');
     }
 }
