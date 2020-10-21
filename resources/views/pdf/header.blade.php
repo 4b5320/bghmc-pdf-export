@@ -18,6 +18,15 @@
             body {
                 font-family: 'Nunito';
             }
+            .tg  {border-collapse:collapse;border-spacing:0; width:100%}
+            .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+              overflow:hidden;padding:0px 10px;word-break:normal;}
+            .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+              font-weight:normal;overflow:hidden;padding:0px 10px;word-break:normal;}
+            .tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+            .tg .tg-5hme{border-color:inherit;font-size:36px;text-align:center;vertical-align:middle}
+            .tg .tg-0pky{border-color:inherit;text-align:center;vertical-align:middle}
+            .tg .tg-q3p3{border-color:inherit;font-size:x-small;text-align:left;vertical-align:bottom}
         </style>
         <script>
             function substitutePdfVariables() {
@@ -44,7 +53,29 @@
         </script>
     </head>
     <body  onload="substitutePdfVariables()">
-        <strong style="margin:auto">THIS IS YOUR HEADER</strong>
-        <span style="display:inline; float:right">Page <span class="page"></span> of <span class="topage"></span></span>
+        {{-- <span style="display:inline; float:right">Page <span class="page"></span> of <span class="topage"></span></span> --}}
+
+        <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0pky" rowspan="6"><img src="https://bghmc.doh.gov.ph/wp-content/uploads/2017/08/cropped-bghmc-logo-1.png" width="125" height="125"></th>
+                <th class="tg-9wq8" colspan="2" rowspan="3">Republic of the Philippines<br>Department of Health<br>BAGUIO GENERAL HOSPITAL AND MEDICAL CENTER<br>Governor Pack Road, Baguio City, Benguet</th>
+              </tr>
+              <tr>
+              </tr>
+              <tr>
+              </tr>
+              <tr>
+                <td class="tg-5hme" rowspan="3">CLINICAL COVER SHEET</td>
+                <td class="tg-q3p3">Form No.: MS-HIM-016</td>
+              </tr>
+              <tr>
+                <td class="tg-q3p3">Revision No.: 4</td>
+              </tr>
+              <tr>
+                <td class="tg-q3p3">Effectivity Date: July 6, 2020</td>
+              </tr>
+            </thead>
+        </table>
     </body>
 </html>

@@ -39,11 +39,11 @@ return [
         'timeout' => false,
         'options' => array(
             'page-size' => 'A4',
-            'margin-top' => 15,
+            'margin-top' => 38,
             'margin-right' => 5,
             'margin-left' => 5,
             'margin-bottom' => 15,
-            'orientation' => 'Landscape',
+            'orientation' => 'Portrait',
             'footer-font-size' => 8,
         ),
         'env'     => [],
