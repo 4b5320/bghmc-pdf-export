@@ -47,4 +47,9 @@ class PdfGenerateController extends Controller
             ->setOption('footer-html', $footerHtml);
         return $pdf->inline('test.pdf');
     }
+
+    public function loadData () {
+        $list = DB::select("exec hospital.jjm.admit_report ?,?",['01-01-2020','01-21-2020']);
+        dd($list);
+    }
 }
