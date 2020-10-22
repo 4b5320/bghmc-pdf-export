@@ -12,6 +12,8 @@ Create a copy of your *.env* from *.env.example*, then run the following command
 $ php artisan key:generate
 ```
 
+### Package used: [ barryvdh/laravel-snappy ](https://github.com/barryvdh/laravel-snappy).
+
 ## Important: The package used (Laravel-Snappy) does not work using **php artisan serve**. Please use a different local dev server
 
 ## Warning: ProcessTimedOutException is not yet caught. Just reload the page
