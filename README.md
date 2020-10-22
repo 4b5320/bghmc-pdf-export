@@ -4,7 +4,6 @@ Run the following commands:
 $ git clone https://github.com/4b5320/bghmc-pdf-export.git
 $ cd bghmc-pdf-export
 $ composer install
-$ php artisan key:generate
 ```
 
 Create a copy of your *.env* from *.env.example*, then run the following command:
