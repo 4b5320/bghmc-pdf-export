@@ -1,5 +1,5 @@
 ## Installation
-
+Run the following commands:
 ```sh
 $ git clone https://github.com/4b5320/bghmc-pdf-export.git
 $ cd bghmc-pdf-export
@@ -7,22 +7,17 @@ $ composer install
 $ php artisan key:generate
 ```
 
+Create a copy of your *.env* from *.env.example*, then run the following command:
+```sh
+$ php artisan key:generate
+```
+
 ## Important: The package used (Laravel-Snappy) does not work using **php artisan serve**. Please use a different local dev server
 
 ## Warning: ProcessTimedOutException is not yet caught. Just reload the page
 
-## Navigation
-To load a fake pdf containing paragraphs:
-```sh
-Route: '/fakePDF/para'
-```
-To load a fake pdf containing a long table:
-```sh
-Route: '/fakePDF/table'
-```
-
 ## Paper Settings
-Paper customizations can be edited in **config/snappy.php**
+Global paper customizations can be edited in **config/snappy.php**
 ```sh
 <?php
 

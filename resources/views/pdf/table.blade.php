@@ -30,9 +30,15 @@
             table {
                 border-collapse: collapse;
             }
+            @media print {
+                .export-table {
+                    overflow: visible !important;
+            }
+}
         </style>
     </head>
     <body>
+        <div class="export-table">
         <table>
             <thead>
                 <tr>
@@ -105,5 +111,6 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
     </body>
 </html>

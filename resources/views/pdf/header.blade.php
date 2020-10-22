@@ -94,7 +94,8 @@
             <tbody>
               <tr>
                 <td class="tg-zv4m"><img src="https://bghmc.doh.gov.ph/wp-content/uploads/2017/08/cropped-bghmc-logo-1.png" alt="Image" width="80" height="80"></td>
-                <td class="tg-pgku"><span style="font-weight:bold">BAGUIO GENERAL HOSPITAL AND MEDICAL CENTER</span><br>Governor Pack Road, Baguio City, Benguet<br><span style="font-weight:bold">ADMISSION AND DISCHARGE REGISTER</span><br>From: xxxxxxxxxx - To: xx/xxx/xxxx</td>
+                <td class="tg-pgku"><span style="font-weight:bold">BAGUIO GENERAL HOSPITAL AND MEDICAL CENTER</span><br>Governor Pack Road, Baguio City, Benguet<br><span style="font-weight:bold">ADMISSION AND DISCHARGE REGISTER</span>
+                    <br>From: {{$request->start}} - To: {{$request->end}}</td>
                 <td class="tg-vs63">
                     <br>Run Date: {{ Carbon\Carbon::now()->format("m/d/Y") }}
                     <br>Run Time: {{ Carbon\Carbon::now()->format("H:i:s") }}

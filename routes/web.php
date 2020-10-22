@@ -7,9 +7,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'fakePDF'], function () {
-    Route::get('para', [PdfGenerateController::class, 'generateFakePara'])->name('generateFakePara');
-    Route::get('table', [PdfGenerateController::class, 'generateFakeTable'])->name('generateFakeTable');
-});
-
 Route::get('generatePDF', [PdfGenerateController::class, 'generatePDF'])->name('generatePDF');
